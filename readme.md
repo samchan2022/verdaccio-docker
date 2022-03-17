@@ -1,10 +1,12 @@
 Introduction
 ---------------------------------------------------
-The goal of the project is to provide a simple download and run mongo cluster in single host for rapid mongo cluster testing.
+Verdaccio docker scripts
 
 Pre-requisites
 ---------------------------------------------------
 Docker
+
+[Optional] Docker-compose
 
 Project Setup
 ---------------------------------------------------
@@ -28,5 +30,29 @@ sh run.sh
 Method2: run with docker-compose
 
 `
-docker-compose up`
+docker-compose up -d ` 
+
+Step 3: Check if the docker is running
+---------------------------------------------------
+`
+docker ps  | grep verdaccio
+`
+
+You should see something like this if it is running normally
+
+`
+a3eac6c956c8   verdaccio/verdaccio   "uid_entrypoint /bin…"   4 minutes ago   Up 2 minutes   0.0.0.0:4873->4873/tcp, :::4873->4873/tcp                       verdaccio
+`
+
+
+
+Uninstall
+---------------------------------------------------
+For docker run:
+
+`docker stop verdaccio && docker rm verdaccio`
+
+For docker-compose:
+
+`docker-compose down`
 

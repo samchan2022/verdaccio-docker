@@ -5,9 +5,6 @@ services:
     image: verdaccio/verdaccio
     container_name: "verdaccio"
     user: node
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-    entrypoint: /bin/sh
     restart: always
     networks:
       - node-network
